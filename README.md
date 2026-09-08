@@ -28,7 +28,7 @@ This is a Boot.dev foundation project showcasing core Python concepts including:
 
 ```bash
 # Clone and navigate
-git clone https://github.com/TheZenBuda/bookbot.git
+git clone https://github.com/ecomantis/bookbot.git
 cd bookbot
 
 # Run analysis on a book file
