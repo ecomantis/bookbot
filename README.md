@@ -1,70 +1,64 @@
-# 📚 BookBot
+# BookBot
 
-A Python text analysis tool that processes novels and generates detailed metrics about word frequency, character counts, and linguistic patterns.
+BookBot is my first [Boot.dev](https://www.boot.dev) project.
 
-## 📖 What It Does
+A command-line Python program that reads a book as a text file and prints a report of its word count and character frequencies.
 
-BookBot analyzes book files and produces:
-- Total word count
-- Total character count
-- Word frequency analysis
-- Character-level statistics
-- Formatted analytical reports
+## Features
 
-## 🎓 Context
+- Counts the total number of words in a book
+- Counts every character (case-insensitive)
+- Prints alphabetic characters sorted from most to least common
+- Takes the book path as a command-line argument
 
-This is a Boot.dev foundation project showcasing core Python concepts including:
-- File I/O operations
-- String manipulation and analysis
-- Data structures (dictionaries, lists)
-- Report generation
+## Usage
 
-## 🚀 Quick Start
+Requires Python 3.
 
-### Prerequisites
-- Python 3.8+
-
-### Usage
-
-```bash
-# Clone and navigate
-git clone https://github.com/ecomantis/bookbot.git
-cd bookbot
-
-# Run analysis on a book file
-python main.py path/to/book.txt
+```sh
+python3 main.py books/frankenstein.txt
 ```
 
-## 📝 Example Output
+If you run it without a path, it prints:
 
 ```
---- Begin book analysis for [BOOK_TITLE] ---
-[Total words]: 12,543
-[Total characters]: 67,890
-[Most common words]: 
-  the: 892
-  and: 654
-  to: 543
---- End book analysis ---
+Usage: python3 main.py <path_to_book>
 ```
 
-## 🛠️ Tech Stack
+### Extra sample books
 
-- **Language:** Python 3
-- **Concepts:** File handling, data structures, text processing
+`books/frankenstein.txt` is included. To add the other Boot.dev sample books:
 
-## 🎯 Learning Goals
+```sh
+mkdir -p books
+curl -L "https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/mobydick.txt" -o books/mobydick.txt
+curl -L "https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/prideandprejudice.txt" -o books/prideandprejudice.txt
 
-This project demonstrates:
-- ✅ Working with files in Python
-- ✅ Dictionary-based data aggregation
-- ✅ String manipulation and analysis
-- ✅ Report formatting and output
+python3 main.py books/mobydick.txt
+python3 main.py books/prideandprejudice.txt
+```
 
-## 📄 License
+## Example output
 
-MIT License - Feel free to fork and extend!
+```
+============ BOOKBOT ============
+Analyzing book found at books/frankenstein.txt...
+----------- Word Count ----------
+Found 75767 total words
+--------- Character Count -------
+e: 44538
+t: 29493
+a: 25894
+...
+============= END ===============
+```
 
----
+## Project structure
 
-*A foundational project in text analysis. Perfect for learning Python fundamentals.*
+```
+bookbot/
+├── main.py      # CLI entry point, file reading, and report printing
+├── stats.py     # Word count, character count, and sorting
+└── books/
+    └── frankenstein.txt
+```
