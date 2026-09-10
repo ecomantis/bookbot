@@ -16,6 +16,8 @@ A command-line Python program that reads a book as a text file and prints a repo
 Requires Python 3.
 
 ```sh
+mkdir -p books
+curl -L "https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/frankenstein.txt" -o books/frankenstein.txt
 python3 main.py books/frankenstein.txt
 ```
 
@@ -27,10 +29,7 @@ Usage: python3 main.py <path_to_book>
 
 ### Extra sample books
 
-`books/frankenstein.txt` is included. To add the other Boot.dev sample books:
-
 ```sh
-mkdir -p books
 curl -L "https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/mobydick.txt" -o books/mobydick.txt
 curl -L "https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/prideandprejudice.txt" -o books/prideandprejudice.txt
 
@@ -59,6 +58,5 @@ a: 25894
 bookbot/
 ├── main.py      # CLI entry point, file reading, and report printing
 ├── stats.py     # Word count, character count, and sorting
-└── books/
-    └── frankenstein.txt
+└── books/       # Sample books (download with the commands above)
 ```
